@@ -72,15 +72,11 @@ i {
       width: 50%;
       display: flex;
       justify-content: center;
-      /* background-color: #222222; */
-      /* border-radius: 8px; */
       height: 40px;
 
       form {
         display: flex;
         border-radius: 40px;
-        /* background-color: #121212; */
-        /* gap: 2px; */
         height: 40px;
         border: 2px solid #222222;
         width: 80%;
@@ -102,7 +98,6 @@ i {
         cursor: pointer;
       }
       svg {
-        /* border: 1px solid red; */
         color: white;
         font-size: 24px;
 
@@ -121,7 +116,6 @@ i {
         display: flex;
         align-items: center;
         justify-content: center;
-
         background: none;
         border: none;
         cursor: pointer;
@@ -145,7 +139,8 @@ i {
       }
     }
   }
-
+  
+  /*----------------- Main----------------- */
   main {
     height: calc(100vh - 62.8px);
     display: flex;
@@ -173,7 +168,6 @@ i {
           cursor: pointer;
           height: 40px;
           display: flex;
-          /* justify-content: space-between; */
           align-items: center;
 
           i {
@@ -187,9 +181,11 @@ i {
             font-weight: 400;
             line-height: 24px;
           }
+
           img {
             margin-right: 0.8rem;
           }
+
           h2 {
             font-size: 1.1rem;
             line-height: 2.2rem;
@@ -200,11 +196,13 @@ i {
             max-height: 2.2rem;
             cursor: pointer;
             margin: 1rem 0px;
+
             i {
               font-size: 16px;
               margin-left: 8px;
             }
           }
+
           &:hover {
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
@@ -214,8 +212,7 @@ i {
     }
 
     .feed {
-      /* width: calc(100% - 240px); */
-      width: calc(100% - 15.6%);
+      width: calc(100% - 240px);
       height: 100%;
       overflow-y: auto;
 
@@ -241,9 +238,11 @@ i {
             border-radius: 8px;
             border: none;
             cursor: pointer;
+
             &:hover {
               background-color: #646464;
             }
+
             &:target {
               background-color: white;
               color: black;
@@ -251,32 +250,21 @@ i {
           }
         }
       }
+
       .bottom {
-        width: 100%;
-        /* display: grid; */
-        display: flex;
-        /* flex-direction: row; */
         flex: 1;
-        flex-wrap: wrap;
-        /* height: calc(100vh - ); */
-        /* grid-template-columns: repeat(3, 1fr); */
-        /* gap: 2rem; */
         justify-content: flex-start;
         overflow-y: scroll;
         overflow: hidden;
         overflow-x: auto;
-        /* padding: 1rem; */
         padding-top: 24px;
         background-color: #0f0f0f;
-
-        /* object-fit: cover; */
 
         .card {
           padding: 5px;
           margin-bottom: 8rem;
-          width: 400px;
-          height: 300px;
           object-fit: cover;
+
           iframe {
             width: 100%;
             height: 100%;
@@ -287,9 +275,11 @@ i {
 
           .head {
             padding: 0px 10px 10px 10px;
+
             h3 {
               color: white;
             }
+
             p {
               color: #a7a7a7;
             }
@@ -300,7 +290,23 @@ i {
   }
 }
 
-@media (width < 1350px) {
+/* ----------------- Media Queries----------------- */
+@media (width > 1460px) {
+  main {
+    .feed {
+      .bottom {
+        display: flex;
+        flex-wrap: wrap;
+        .card {
+          width: 400px;
+          height: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media (width < 1460px) {
   main {
     .sidebar {
       .subscriptions,
@@ -308,73 +314,101 @@ i {
       .more {
         display: none;
       }
+
       ul li {
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 1rem 0px;
+
         i {
           margin: 0px;
         }
+
         a {
           display: none;
-
-          /* padding: 6px; */
         }
+      }
+    }
+
+    .feed {
+      .bottom {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
       }
     }
   }
 }
-@media (width < 1000px) {
+
+@media (width < 1250px) {
+  main {
+    .feed {
+      .bottom {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
   main {
     .sidebar {
       min-width: 30px;
       padding: 8px;
-      /* display: flex; */
       justify-content: center;
       align-items: center;
     }
   }
-
-  .feed {
-    .bottom {
-      /* .card; {
-        width: ;
-
-      } */
-    }
-  }
 }
-@media (width < 650px) {
+
+@media (width < 950px) {
   main {
     width: 100%;
-    border: 1px solid pink;
     padding: 0px;
     margin: 0px;
     justify-content: center;
+
     .sidebar {
       display: none;
     }
-    .feed {
-      /* display: flex; */
-      border: 1px solid red;
 
-      /* width: calc(100% - 1px); */
-      padding: 0px;
+    .feed {
+      justify-content: center;
+      align-items: center;
+      min-width: 100%;
+      min-height: 100%;
+      padding: 0px 16px;
       margin: 0px;
 
-      .bottom {
-        width: 100%;
-        padding: 0px;
-        margin: 0px;
-
-        .card {
-          width: 200px;
-          height: 100px;
-          object-fit: cover;
-          padding: 0px;
-          margin: 0px;
+      .top {
+        ul li {
+          font-size: 10px;
         }
+      }
+
+      .bottom {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
+@media (width < 650px) {
+  /* header {
+  .middle form {
+    display: none;
+  }
+ } */
+  main {
+    .feed {
+      .bottom {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
       }
     }
   }
