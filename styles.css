@@ -5,7 +5,7 @@
 }
 body {
   position: fixed;
-  }
+}
 a {
   text-decoration: none;
   color: white;
@@ -141,7 +141,7 @@ i {
       }
     }
   }
-  
+
   /*----------------- Main----------------- */
   main {
     height: calc(100vh - 62.8px);
@@ -404,11 +404,11 @@ i {
 
 @media (width < 650px) {
   header {
-  .middle  {
-\    display: none !important;
+    .middle {
+      display: none !important;
+    }
   }
- }
- 
+
   main {
     .feed {
       .bottom {
