@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  position: fixed;
+  }
 a {
   text-decoration: none;
   color: white;
@@ -349,6 +351,7 @@ i {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
+        width: 100%;
       }
     }
   }
@@ -393,6 +396,7 @@ i {
       .bottom {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        width: 100%;
       }
     }
   }
@@ -404,11 +408,13 @@ i {
     display: none;
   }
  } */
+ 
   main {
     .feed {
       .bottom {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+        width: 100%;
       }
     }
   }
