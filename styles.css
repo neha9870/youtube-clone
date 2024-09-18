@@ -403,11 +403,11 @@ i {
 }
 
 @media (width < 650px) {
-  /* header {
-  .middle form {
-    display: none;
+  header {
+  .middle  {
+\    display: none !important;
   }
- } */
+ }
  
   main {
     .feed {
